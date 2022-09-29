@@ -637,9 +637,6 @@ input::placeholder {
 /* option input for checkboxes and radio buttons */
 
 .c-option {
-    --custom-option-borderColor: var(--global-input-borderColor);
-    --custom-option-focus-borderColor: var(--global-input-focus-borderColor);
-    --custom-option-hover-borderColor: var(--global-input-hover-borderColor);
     margin-right: var(--global-whitespace-sm);
 
 }
@@ -683,6 +680,9 @@ input::placeholder {
 
 .c-custom-option{
     display: flex;
+    --custom-option-borderColor: var(--global-input-borderColor);
+    --custom-option-focus-borderColor: var(--global-input-focus-borderColor);
+    --custom-option-hover-borderColor: var(--global-input-hover-borderColor);
 }
 
 
@@ -728,6 +728,59 @@ input::placeholder {
     justify-content: center;
 }
 
+.c-custom-toggle__fake-input{
+    display: flex;
+    width: 48px;
+    height: 24px;
+    margin-right: 8px;
+    background-color: var(--global-color-neutral-xxxx-light);
+    border: 1px solid var(--global-color-neutral-xxx-light);
+    border-radius: 24px;
+}
+
+.c-custom-toggle__fake-input:focus{
+    box-shadow: 0 0 0 3px var(--global-color-alpha-x-transparent);
+    border: 1px solid #81ADF0;
+}
+
+
+.c-custom-toggle__fake-input::after{
+    content:'';
+    width: 22px;
+    height: 22px;
+    display: block;
+    border-radius: 100%;
+    box-shadow: 0 1px 3px 1px #00000029;
+    background-color: white;
+    transition: all var(--global-transitionTiming-alpha);
+    
+}
+
+.c-option--hidden:checked + .c-custom-toggle .c-custom-toggle__fake-input{
+    background-color: #3385FF;
+    border: 1px solid #2E77E6;
+    transition: all var(--global-transitionTiming-alpha);
+}
+
+.c-option--hidden:checked + .c-custom-toggle .c-custom-toggle__fake-input::after{
+    transform: translateX(25px);
+    transition: all var(--global-transitionTiming-alpha);
+}
+
+.c-option--hidden:active + .c-custom-toggle .c-custom-toggle__fake-input::after{
+    width: 28px;
+    border-radius: 24px;
+    transition: all var(--global-input-transition-time) cubic-bezier(var(--global-input-transitio-CubicBezier));
+    
+}
+
+.c-option--hidden:active:checked + .c-custom-toggle .c-custom-toggle__fake-input::after{
+    width: 28px;
+    border-radius: 24px;
+    transition: all var(--global-input-transition-time) cubic-bezier(var(--global-input-transitio-CubicBezier));
+    transform: translateX(18.5px);
+}
+
 /*
     Component: Label
     ---
@@ -744,6 +797,8 @@ input::placeholder {
 
 .c-label--option {
     padding-bottom: 0;
+    display: flex;
+    align-items: center;
 }
 
 /*
