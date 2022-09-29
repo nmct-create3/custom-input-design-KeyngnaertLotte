@@ -781,6 +781,27 @@ input::placeholder {
     transform: translateX(18.5px);
 }
 
+.c-toggle-list .c-toggle-list__item{
+    margin-bottom: 13px;
+    margin-right: 0;
+    
+}
+
+.c-toggle-list .c-toggle-list__item:nth-child(2){
+    padding: 13px 0;
+    border-top: 1px solid var(--global-color-neutral-xxx-light);
+    border-bottom: 1px solid var(--global-color-neutral-xxx-light);
+}
+
+.c-custom-toggle--inverted{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: 0;
+    justify-content: space-between;
+    
+
+}
+
 /*
     Component: Label
     ---
