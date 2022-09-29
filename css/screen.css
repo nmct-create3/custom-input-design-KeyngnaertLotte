@@ -640,6 +640,14 @@ input::placeholder {
     margin-right: var(--global-whitespace-sm);
 }
 
+.c-option-list{
+    margin-bottom: 24px;
+}
+
+.c-option-list__item{
+    margin-bottom: 12px;
+}
+
 .c-option--hidden:checked + .c-custom-option .c-custom-option__symbol{
     fill: blue;
     opacity: 1;
