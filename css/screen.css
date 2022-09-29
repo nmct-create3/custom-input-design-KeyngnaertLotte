@@ -637,7 +637,11 @@ input::placeholder {
 /* option input for checkboxes and radio buttons */
 
 .c-option {
+    --custom-option-borderColor: var(--global-input-borderColor);
+    --custom-option-focus-borderColor: var(--global-input-focus-borderColor);
+    --custom-option-hover-borderColor: var(--global-input-hover-borderColor);
     margin-right: var(--global-whitespace-sm);
+
 }
 
 .c-option-list{
@@ -686,7 +690,7 @@ input::placeholder {
     display: flex;
     width: 16px;
     height: 16px;
-    border: 1px solid var(--global-color-neutral-xxx-light);
+    border: 1px solid var(--custom-option-borderColor);
     margin-right: 8px;
 }
 
@@ -694,9 +698,17 @@ input::placeholder {
     border-color: var(--global-input-hover-borderColor);
 }
 
+.c-custom-option:hover{
+    border-color: var(--custom-option-hover-borderColor);
+}
+
+.c-custom-option:focus,
+.c-custom-option:active{
+    border-color: var(--custom-option-focus-borderColor);
+}
+
 .c-custom-option__fake-input:focus,
 .c-custom-option__fake-input:active{
-    border-color: var(--global-input-focus-borderColor);
     box-shadow: 0 0 0 3px var(--global-color-alpha-x-transparent);
 }
 
