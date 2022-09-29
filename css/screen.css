@@ -246,6 +246,11 @@ input::placeholder {
     color: var(--global-color-neutral-x-light);
 }
 
+select{
+    font-family: "Inter Web";
+    font-size: 16px;
+}
+
 /*------------------------------------*\
 #OBJECTS
 \*------------------------------------*/
@@ -634,6 +639,8 @@ input::placeholder {
     box-shadow: 0 0 0 3px var(--global-color-alpha-x-transparent);
 }
 
+
+
 /* option input for checkboxes and radio buttons */
 
 .c-option {
@@ -798,9 +805,40 @@ input::placeholder {
     flex-direction: row-reverse;
     margin-right: 0;
     justify-content: space-between;
-    
-
 }
+
+.c-custom-select__input{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    border: var(--global-borderWidth) solid var(--global-input-borderColor);
+    border-radius: var(--global-borderRadius);
+    color: var(--global-input-color);
+    background-color: var(--global-input-backgroundColor);
+    font-family: inherit;
+    font-size: 16px;
+    line-height: calc(var(--global-baseline) * 3);
+    padding: calc(var(--global-baseline) * 1.5 - var(--global-borderWidth)) var(--global-whitespace-md);
+    outline: none;
+    transition: border var(--global-transition-timing-alpha);
+}
+
+.c-custom-select{
+    display: block;
+    position: relative;
+}
+
+.c-custom-select__symbol{
+    fill: var(--global-color-neutral-x-light);
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    pointer-events: none;
+}
+
 
 /*
     Component: Label
