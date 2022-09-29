@@ -75,6 +75,9 @@
     --global-input-hover-borderColor: var(--global-color-neutral-xx-light);
     --global-input-focus-borderColor: var(--global-color-alpha);
     --global-input-boxShadow: 0 0 0 3px var(--global-color-alpha-x-transparent);
+
+    --global-input-transition-time: 100ms;
+    --global-input-transitio-CubicBezier: 0.250, 0.250, 0.750, 0.750;
 }
 
 /*------------------------------------*\
@@ -639,11 +642,19 @@ input::placeholder {
 
 .c-option--hidden:checked + .c-custom-option .c-custom-option__symbol{
     fill: blue;
+    opacity: 1;
+    transition: all var(--global-input-transition-time) cubic-bezier(var(--global-input-transitio-CubicBezier));
+    transform: scale(100%) translate(0, 0);
+
+
 }
 
+
 .c-custom-option__symbol{
-    /*opacity: none;*/
-    display: block;
+    opacity: 0;
+    /*display: block;*/
+    transition: all var(--global-input-transition-time) cubic-bezier(var(--global-input-transitio-CubicBezier));
+    transform: scale(0.5) translate(0, 0);
 }
 
 .c-custom-option__fake-input--checkbox .c-custom-option__symbol{
