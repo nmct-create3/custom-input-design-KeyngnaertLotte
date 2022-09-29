@@ -641,6 +641,51 @@ input::placeholder {
     fill: blue;
 }
 
+.c-custom-option__symbol{
+    /*opacity: none;*/
+    display: block;
+}
+
+.c-custom-option__fake-input--checkbox .c-custom-option__symbol{
+    height: 10px;
+    width: 10px;
+    fill: var(--global-color-alpha);
+}
+
+.c-custom-option__fake-input--radio .c-custom-option__symbol{
+    height: 6px;
+    width: 6px;
+    background-color: var(--global-color-alpha);
+    border-radius: 100%;
+}
+
+.c-custom-option{
+    display: flex;
+}
+
+
+.c-custom-option__fake-input{
+    display: flex;
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--global-color-neutral-xxx-light);
+    margin-right: 8px;
+}
+
+.c-custom-option__fake-input--checkbox{
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.c-custom-option__fake-input--radio{
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /*
     Component: Label
     ---
