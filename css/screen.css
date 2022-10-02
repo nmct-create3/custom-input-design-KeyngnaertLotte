@@ -78,7 +78,36 @@
 
     --global-input-transition-time: 100ms;
     --global-input-transitio-CubicBezier: 0.250, 0.250, 0.750, 0.750;
+
+    --global-page-color: var(--global-color-neutral-xxxx-dark);
+    --global-page-backgroundColor: var(--global-color-neutral-xxxx-light);
+    --global-card-backgroundColor: white;
+
+    --global-label-color: var(--global-color-neutral-xx-dark);
+    --global-border-color: var(--global-color-neutral-xxx-light);
+    
 }
+
+@media (prefers-color-scheme: dark){
+    :root{
+        --global-page-color: white;
+        --global-page-backgroundColor: var(--global-color-neutral-xxxx-dark);
+        
+        --global-card-backgroundColor: var(--global-color-neutral-xxx-dark);
+
+        --global-label-color: var(--global-color-neutral-xx-light);
+        --global-border-color: var(--global-color-neutral-xxxx-dark);
+
+        --global-input-backgroundColor: var(--global-color-neutral-xxxx-dark);
+        --global-input-borderColor: var(--global-color-neutral-xxx-dark);
+        --global-input-color: var(--global-color-neutral-xxxx-light);
+        --global-input-hover-borderColor: var(--global-color-neutral-xx-dark);
+    }
+
+    
+}
+
+
 
 /*------------------------------------*\
 #GENERIC
@@ -93,12 +122,13 @@
 html {
     line-height: 1.5;
     font-family: "Inter Web", Helvetica, arial, sans-serif;
-    color: var(--global-color-neutral-xxxx-dark);
-    background-color: var(--global-color-neutral-xxxx-light);
+    color: var(--global-page-color);
+    background-color: var(--global-page-backgroundColor);
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
 
 *,
 *:before,
@@ -526,23 +556,37 @@ select{
     align-items: center;
     justify-content: center;
     margin-bottom: var(--global-whitespace-xl);
+
+    --logo__path--1--fill: var(--global-color-neutral-xxxx-dark);
+    --logo__path--2--fill: var(--global-color-alpha);
+    --logo__path--3--fill: var(--global-color-alpha-x-dark);
 }
+
+@media (prefers-color-scheme: dark) {
+    .c-logo {
+      --logo__path--1--fill: White;
+      --logo__path--2--fill: var(--logo__path--1--fill);
+      --logo__path--3--fill: var(--logo__path--1--fill);
+    }
+  }
 
 .c-logo__symbol {
     height: 100%;
 }
 
 .c-logo__path--1 {
-    fill: var(--global-color-neutral-xxxx-dark);
+    fill: var(--logo__path--1--fill);
 }
 
 .c-logo__path--2 {
-    fill: var(--global-color-alpha);
+    fill: var(--logo__path--2--fill);
 }
 
 .c-logo__path--3 {
-    fill: var(--global-color-alpha-x-dark);
+    fill: var(--logo__path--3--fill);
 }
+
+
 
 /*
     Component: Card
@@ -551,7 +595,7 @@ select{
 */
 
 .c-card {
-    background-color: White;
+    background-color: var(--global-card-backgroundColor);
     margin-bottom: var(--global-whitespace);
     border-radius: var(--global-borderRadius);
     box-shadow: 0 0 0 var(--global-borderWidth) rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, .075);
@@ -566,7 +610,7 @@ select{
 
 .c-card__footer {
     text-align: center;
-    border-top: var(--global-borderWidth) solid var(--global-color-neutral-xxx-light);
+    border-top: var(--global-borderWidth) solid var(--global-border-color);
 }
 
 .c-card__title {
@@ -726,6 +770,7 @@ select{
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: var(--global-input-backgroundColor);
 }
 
 .c-custom-option__fake-input--radio{
@@ -733,6 +778,7 @@ select{
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: var(--global-input-backgroundColor);
 }
 
 .c-custom-toggle__fake-input{
@@ -796,8 +842,8 @@ select{
 
 .c-toggle-list .c-toggle-list__item:nth-child(2){
     padding: 13px 0;
-    border-top: 1px solid var(--global-color-neutral-xxx-light);
-    border-bottom: 1px solid var(--global-color-neutral-xxx-light);
+    border-top: 1px solid var(--global-border-color);
+    border-bottom: 1px solid var(--global-border-color);
 }
 
 .c-custom-toggle--inverted{
@@ -851,7 +897,7 @@ select{
     font-size: 14px;
     padding-bottom: var(--global-whitespace-xs);
     line-height: calc(var(--global-baseline) * 2);
-    color: var(--global-color-neutral-xx-dark);
+    color: var(--global-label-color);
 }
 
 .c-label--option {
